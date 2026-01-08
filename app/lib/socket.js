@@ -1,26 +1,42 @@
 /**
  * Socket.io client setup for real-time updates
- * Note: Socket.io requires a separate server in Next.js
- * Consider using Supabase Realtime instead for better integration
  */
 
-// Socket.io is disabled in Next.js - use Supabase Realtime instead
-// This is kept for reference but won't work without a separate Socket.io server
+import { io } from 'socket.io-client';
+
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:3001';
+
+let socket = null;
 
 export function getSocket() {
-  console.warn('Socket.io is not configured. Consider using Supabase Realtime instead.');
-  return null;
+  if (!socket) {
+    socket = io(SOCKET_URL, {
+      transports: ['websocket'],
+      autoConnect: false,
+    });
+  }
+  return socket;
 }
 
 export function connectSocket(token) {
-  console.warn('Socket.io is not configured. Consider using Supabase Realtime instead.');
-  return null;
+  const s = getSocket();
+  if (!s.connected) {
+    s.auth = { token };
+    s.connect();
+  }
+  return s;
 }
 
 export function disconnectSocket() {
-  // No-op
+  if (socket) {
+    socket.disconnect();
+    socket = null;
+  }
 }
 
 export function joinRoom(room) {
-  // No-op
+  const s = getSocket();
+  if (s.connected) {
+    s.emit('join-room', room);
+  }
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { api } from '@/lib/api';
-import { useAuthStore } from '@/store/authStore';
+import { api } from '../../lib/api';
+import { useAuthStore } from '../../store/authStore';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
 
 const COLORS = ['#3b82f6', '#ef4444', '#10b981', '#f59e0b'];

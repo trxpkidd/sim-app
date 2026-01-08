@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { loadMapData, getCellPolygon, getMapBounds } from '@/utils/mapData';
-import { useTerritoryStore } from '@/store/territoryStore';
+import { loadMapData, getCellPolygon, getMapBounds } from '../utils/mapData';
+import { useTerritoryStore } from '../store/territoryStore';
 
 /**
  * Main map component that renders the geopolitical map using SVG

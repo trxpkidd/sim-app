@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useAuthStore } from '@/store/authStore';
+import { useAuthStore } from '../store/authStore';
 import AdminDashboard from './Dashboards/AdminDashboard';
 import ModeratorDashboard from './Dashboards/ModeratorDashboard';
 import NationLeaderDashboard from './Dashboards/NationLeaderDashboard';

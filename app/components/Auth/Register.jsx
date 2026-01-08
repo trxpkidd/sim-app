@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useAuthStore } from '@/store/authStore';
+import { useAuthStore } from '../../store/authStore';
 
 export default function Register({ onSwitchToLogin }) {
   const [email, setEmail] = useState('');

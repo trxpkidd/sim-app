@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useTerritoryStore } from '@/store/territoryStore';
-import { loadMapData } from '@/utils/mapData';
+import { useTerritoryStore } from '../store/territoryStore';
+import { loadMapData } from '../utils/mapData';
 
 /**
  * Sidebar component for displaying province/nation details

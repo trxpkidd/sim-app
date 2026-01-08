@@ -1,5 +1,5 @@
-import { useAuthStore } from '@/store/authStore';
-import { api } from '@/lib/api';
+import { useAuthStore } from '../store/authStore';
+import { api } from '../lib/api';
 
 export default function Header() {
   const { user, logout } = useAuthStore();
